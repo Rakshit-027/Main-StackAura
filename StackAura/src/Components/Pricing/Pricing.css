@@ -1,0 +1,43 @@
+.main-container{
+    height:100vh;
+}
+.tagline{
+    margin-top: 150px;
+    
+}
+.PriceCards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+}
+
+@media (max-width: 1200px) {
+    .PriceCards {
+        gap: 20px; /* Reduce gap for medium-sized screens */
+        margin-top: -0px;
+    }
+}
+
+@media (max-width: 768px) {
+    .PriceCards {
+        gap: 15px; /* Reduce gap for smaller screens */
+        margin-top: -90px;
+        flex-direction: column; /* Stack the cards vertically on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .PriceCards {
+        
+        gap: 10px; /* Even smaller gap for very small screens */
+        flex-direction: column; /* Ensure vertical stacking on mobile */
+        padding: 0 100px; /* Add some padding on smaller screens */
+    }
+}
+.getstarted{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}

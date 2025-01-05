@@ -1,0 +1,35 @@
+.Tagline{
+    margin-top: 200px;
+    font-size: 30px;
+}
+.deccard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+    gap: 30px;
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+}
+
+@media (max-width: 1200px) {
+    .deccard {
+        gap: 20px; /* Reduce gap for medium-sized screens */
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .deccard {
+        gap: 25px; /* Reduce gap for smaller screens */
+        margin-top: 8px;
+        flex-direction: column; /* Stack the cards vertically on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .deccard {
+        
+        gap: 10px; /* Even smaller gap for very small screens */
+        flex-direction: column; /* Ensure vertical stacking on mobile */
+        margin-top: 20px; /* Add some padding on smaller screens */
+    }}
