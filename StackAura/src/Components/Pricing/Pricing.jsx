@@ -49,7 +49,7 @@ const Pricing = () => {
                 
                 />
       <PriceCards Plan="Maintenance Plan"
-                  month=""
+                  month="Based on your plans"
                   Pricing=""
                   Everything=""
                   Feature1="Basic: $50/mo - Updates & security"

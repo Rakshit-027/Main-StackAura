@@ -33,8 +33,8 @@ const StyledWrapper = styled.div`
     --font-color-sub: #7e7e7e;
     --bg-color: #111;
     --main-color: #fefefe;
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     // background: var(--bg-color);
     background:transparent;
     border: 2px solid var(--main-color);

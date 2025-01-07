@@ -32,9 +32,9 @@ const StyledWrapper = styled.div`
     flex-direction: column;
     gap: 0.75rem;
     padding: 1rem;
-    width: 19rem;
-    height: 350px;
-    background-color: rgb(18, 14, 72);
+    width: 10rem;
+    height: 250px;
+    background-color: transparent;
     background-image: transperent
       radial-gradient(
         circle at 100% 100%,
@@ -48,7 +48,9 @@ const StyledWrapper = styled.div`
         rgba(24, 8, 28, 0) 100%
       );
     border-radius: 0.5rem;
+    border:solid white 0.2rem;
   }
+    
 
   .card::before {
     content: "";
@@ -57,18 +59,18 @@ const StyledWrapper = styled.div`
     right: 1rem;
     width: 2rem;
     height: 2rem;
-    background-color: rgb(122, 48, 143);
-    background-image: linear-gradient(
-      0deg,
-      rgba(118, 42, 180, 1) 0%,
-      rgb(199, 95, 228) 75%
-    );
+    // background-color: rgb(122, 48, 143);
+    // background-image: linear-gradient(
+    //   0deg,
+    //   rgba(118, 42, 180, 1) 0%,
+    //   rgb(199, 95, 228) 75%
+    // );
     border-radius: 9999px;
-    box-shadow: 0 1px 5px 3px rgb(199, 95, 228), 0 0 30px 5px rgb(199, 95, 228);
+    // box-shadow: 0 1px 5px 3px rgb(199, 95, 228), 0 0 30px 5px rgb(199, 95, 228);
   }
 
   .card .title {
-    font-size: 2rem;
+    font-size: 1rem;
     color: white;
     font-weight: 600;
   }
@@ -92,7 +94,7 @@ const StyledWrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 0.30rem;
-    font-size: 1.2rem;
+    font-size: 0.6rem;
     color: white;
     font-weight: 500;
     list-style: none;
