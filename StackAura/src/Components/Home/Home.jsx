@@ -9,7 +9,7 @@ const Home = () => {
        <div className="content">
         <div className="tagline">
           <Tagline
-            heading="Transforming Your Ideas into Stunning Digital Experiences"
+            heading="Transforming Your Ideas into Stunning Digital Experiences "
             sub="We Build Tailored Websites That Drive Success and Engage Your Audience"
           />
         </div>

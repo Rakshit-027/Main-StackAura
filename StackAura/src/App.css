@@ -1,6 +1,10 @@
-html{
+body,html{
     scroll-behavior:smooth ;
     scroll-snap-type: mandatory;
+    
+    
+    
+    
 }
 .Pricing{
     height: 50px;

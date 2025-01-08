@@ -9,6 +9,8 @@ function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const NAVBAR_HEIGHT = -38; // Adjust this to match your navbar height
+
   return (
     <nav className="navbar-container">
       {/* Logo Container */}
@@ -20,32 +22,80 @@ function Navbar() {
       <div className={`navbar ${isMenuOpen ? 'show' : ''}`}>
         <ul className="nav-links">
           <li>
-            <Link to="home" smooth={true} duration={500} spy={true} offset={-70}>
+            <Link
+              to="home"
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={NAVBAR_HEIGHT}
+              activeClass="active"
+              onSetActive={(section) => console.log('Active section:', section)}
+            >
               Home
             </Link>
           </li>
           <li>
-            <Link to="about" smooth={true} duration={500} spy={true} offset={-70}>
+            <Link
+              to="about"
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={NAVBAR_HEIGHT}
+              activeClass="active"
+              onSetActive={(section) => console.log('Active section:', section)}
+            >
               About
             </Link>
           </li>
           <li>
-            <Link to="services" smooth={true} duration={500} spy={true} offset={-70}>
+            <Link
+              to="services"
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={NAVBAR_HEIGHT}
+              activeClass="active"
+              onSetActive={(section) => console.log('Active section:', section)}
+            >
               Services
             </Link>
           </li>
           <li>
-            <Link to="pricing" smooth={true} duration={500} spy={true} offset={-70}>
+            <Link
+              to="pricing"
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={NAVBAR_HEIGHT}
+              activeClass="active"
+              onSetActive={(section) => console.log('Active section:', section)}
+            >
               Pricing
             </Link>
           </li>
           <li>
-            <Link to="developers" smooth={true} duration={500} spy={true} offset={-70}>
+            <Link
+              to="developers"
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={NAVBAR_HEIGHT}
+              activeClass="active"
+              onSetActive={(section) => console.log('Active section:', section)}
+            >
               Developers
             </Link>
           </li>
           <li>
-            <Link to="contact" smooth={true} duration={500} spy={true} offset={-70}>
+            <Link
+              to="contact"
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={NAVBAR_HEIGHT}
+              activeClass="active"
+              onSetActive={(section) => console.log('Active section:', section)}
+            >
               Contact
             </Link>
           </li>

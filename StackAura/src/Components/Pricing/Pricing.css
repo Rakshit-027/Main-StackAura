@@ -2,14 +2,14 @@
     height:100vh;
 }
 .tagline{
-    margin-top: 150px;
+    margin-top: 175px;
     
 }
 .PriceCards {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -40px;
+    margin-top: -30px;
     gap: 30px;
     flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
 }

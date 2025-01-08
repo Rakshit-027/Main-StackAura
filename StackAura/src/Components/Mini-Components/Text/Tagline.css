@@ -1,4 +1,4 @@
-/* Tagline.css */
+
 .tagline-container {
     display: flex;
     flex-direction: column;
@@ -12,23 +12,25 @@
   .tagline-heading {
     margin: 0;
     font-size: 4rem;
-    font-weight: bold;
-    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-family: "Open Sans", serif;
+    font-style: normal;
     margin-bottom: 1rem;
     line-height: 1.2;
-    background-image: linear-gradient(90deg, white, rgb(23, 23, 255));
-    background-clip: text;
-    color: transparent;
+    /* background-image: linear-gradient(90deg, white, rgb(23, 23, 255)); 
+    background-clip:text;
+    color: transparent; */
   }
   
   .tagline-subheading {
     font-size: 2rem;
     margin-bottom: 2rem;
     max-width: 800px;
-    font-family: "Ysabeau SC", serif;
-    background-image: linear-gradient(90deg, white, rgb(122, 122, 165));
+    font-family: "Aboreto", serif;
+    font-weight: 400;
+    /* background-image: linear-gradient(90deg, white, rgb(122, 122, 165));
     background-clip: text;
-    color: transparent;
+    color: transparent; */
   }
   
   @media (max-width: 768px) {

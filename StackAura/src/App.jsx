@@ -8,15 +8,15 @@ import Pricing from './Components/Pricing/Pricing';
 import Developers from './Components/Developers/Developers';
 import Contact from './Components/Contact/Contact';
 import Navbar from './Components/Navbar/Navbar';
-
 const fadeInVariants = {
   hidden: { opacity: 0, y: 50 },
   visible: { opacity: 1, y: 0 },
 };
 
+
 function App() {
   return (
-    <div>
+    <div className='Nav'>
       {/* Navbar Component */}
       <Navbar />
 
@@ -84,6 +84,7 @@ function App() {
         </motion.div>
       </div>
     </div>
+  
   );
 }
 
