@@ -1,63 +1,186 @@
-.Home{
-    height:100vh;
-    
-
+.home {
+  min-height: 100vh;
+  /* background-color: rgb(249 250 251); */
 }
+
+.get{
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .content {
-    position: relative;
-    z-index: 1; /* Brings the content above the video */
-    text-align: center;
-    margin-top: 20vh;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tagline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tagline-container h1 {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: hsl(0, 0%, 100%);
+}
+
+@media (min-width: 768px) {
+  .tagline-container h1 {
+    font-size: 3rem;
   }
-  .getstarted{
-     margin-top: 5px;
-     margin-bottom: -18px;
+}
+
+.tagline-container p {
+  font-size: 1.25rem;
+  color: rgb(75 85 99);
+}
+
+.get-started-button {
+  display: inline-flex;
+  padding: 0.75rem 2rem;
+  background-color: rgb(37 99 235);
+  color: white;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.get-started-button:hover {
+  background-color: rgb(29 78 216);
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
-  @media (max-width: 768px) {
-    .getstarted {
-      margin-top: -100px;
-    }
-    }
-  
-  
-  @media (max-width: 480px) {
-    .getstarted {
-      margin-top: -100px;
-      margin-bottom: 20px;
-    }
-    
+}
+
+.card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon-container {
+  padding: 0.75rem;
+  background-color: rgb(219 234 254);
+  border-radius: 0.5rem;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: rgb(37 99 235);
+}
+
+.card-text h3 {
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: rgb(17 24 39);
+}
+
+.card-text p {
+  color: rgb(75 85 99);
+}
+
+.image-section {
+  position: relative;
+}
+
+.blob {
+  position: absolute;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 9999px;
+  mix-blend-mode: multiply;
+  filter: blur(1rem);
+  opacity: 0.7;
+  animation: blob 7s infinite;
+}
+
+.blob-1 {
+  top: -1rem;
+  left: -1rem;
+  background-color: rgb(191 219 254);
+}
+
+.blob-2 {
+  bottom: -2rem;
+  right: -1rem;
+  background-color: rgb(233 213 255);
+  animation-delay: 2s;
+}
+
+.blob-3 {
+  bottom: -2rem;
+  left: 5rem;
+  background-color: rgb(251 207 232);
+  animation-delay: 4s;
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-container img {
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  object-fit: cover;
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
   }
-  .Tagline{
-    margin-top: -50px;
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
   }
-  
-  .cards {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
-    margin-top: 40px;
-    flex-wrap: wrap; /* Allow the cards to wrap on smaller screens */
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
   }
-  
-  @media (max-width: 1024px) {
-    .cards {
-      gap: 2rem; /* Reduce gap for medium screens */
-    }
+  100% {
+    transform: translate(0px, 0px) scale(1);
   }
-  
-  @media (max-width: 768px) {
-    .cards {
-      gap: 1rem; /* Further reduce gap for smaller screens */
-      margin-top: 30px; /* Adjust margin for smaller screens */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .cards {
-      flex-direction: column; /* Stack cards vertically on very small screens */
-      gap: 1rem; /* Adjust gap */
-      margin-top: 20px; /* Further adjust margin */
-    }
-  }
-  
+}

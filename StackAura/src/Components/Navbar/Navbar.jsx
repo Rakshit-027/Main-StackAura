@@ -1,114 +1,90 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
+import { Menu, X } from 'lucide-react';
 import './Navbar.css';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    document.body.style.overflow = !isMenuOpen ? 'hidden' : 'auto';
   };
 
-  const NAVBAR_HEIGHT = -38; // Adjust this to match your navbar height
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    document.body.style.overflow = 'auto';
+  };
+
+  const navItems = [
+    { to: 'home', label: 'Home' },
+    { to: 'about', label: 'About' },
+    { to: 'services', label: 'Services' },
+    { to: 'pricing', label: 'Pricing' },
+    { to: 'developers', label: 'Developers' },
+    { to: 'contact', label: 'Contact' }
+  ];
 
   return (
-    <nav className="navbar-container">
-      {/* Logo Container */}
-      <div className="logo">
-        <a href="#home">Your Logo</a>
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="nav-container">
+        <div className="nav-logo">
+          <Link to="home" smooth={true} duration={500}>
+            YourLogo
+          </Link>
+        </div>
+
+        <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+          {navItems.map((item) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              smooth={true}
+              duration={500}
+              spy={true}
+              offset={-70}
+              activeClass="active"
+              onClick={closeMenu}
+              className="nav-link"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+
+        <button className="nav-toggle" onClick={toggleMenu} aria-label="Toggle menu">
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
 
-      {/* Navbar Links */}
-      <div className={`navbar ${isMenuOpen ? 'show' : ''}`}>
-        <ul className="nav-links">
-          <li>
-            <Link
-              to="home"
-              smooth={true}
-              duration={500}
-              spy={true}
-              offset={NAVBAR_HEIGHT}
-              activeClass="active"
-              onSetActive={(section) => console.log('Active section:', section)}
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="about"
-              smooth={true}
-              duration={500}
-              spy={true}
-              offset={NAVBAR_HEIGHT}
-              activeClass="active"
-              onSetActive={(section) => console.log('Active section:', section)}
-            >
-              About
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="services"
-              smooth={true}
-              duration={500}
-              spy={true}
-              offset={NAVBAR_HEIGHT}
-              activeClass="active"
-              onSetActive={(section) => console.log('Active section:', section)}
-            >
-              Services
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="pricing"
-              smooth={true}
-              duration={500}
-              spy={true}
-              offset={NAVBAR_HEIGHT}
-              activeClass="active"
-              onSetActive={(section) => console.log('Active section:', section)}
-            >
-              Pricing
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="developers"
-              smooth={true}
-              duration={500}
-              spy={true}
-              offset={NAVBAR_HEIGHT}
-              activeClass="active"
-              onSetActive={(section) => console.log('Active section:', section)}
-            >
-              Developers
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="contact"
-              smooth={true}
-              duration={500}
-              spy={true}
-              offset={NAVBAR_HEIGHT}
-              activeClass="active"
-              onSetActive={(section) => console.log('Active section:', section)}
-            >
-              Contact
-            </Link>
-          </li>
-        </ul>
+      {/* Mobile menu overlay */}
+      <div className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
+        {navItems.map((item) => (
+          <Link
+            key={item.to}
+            to={item.to}
+            smooth={true}
+            duration={500}
+            spy={true}
+            offset={-70}
+            activeClass="active"
+            onClick={closeMenu}
+            className="mobile-link"
+          >
+            {item.label}
+          </Link>
+        ))}
       </div>
-
-      {/* Hamburger Menu Button */}
-      <div className="hamburger" onClick={toggleMenu}>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      {isMenuOpen && <div className="overlay" onClick={toggleMenu}></div>}
     </nav>
   );
 }
