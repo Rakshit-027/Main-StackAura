@@ -3,8 +3,27 @@ body {
     font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    background-color: #0a0a1f;
+    position: relative;
+    overflow: hidden;
   }
   
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: -1;
+  }
   .pricing-section {
     background: inherit;
     color: #fff;
