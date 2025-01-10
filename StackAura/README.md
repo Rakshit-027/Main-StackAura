@@ -20,8 +20,6 @@ pip install styled-components
 ## Usage
 
 ```python
-Here’s an example of a **Usage** section for a README file for your web solutions company’s portfolio website:  
-
 ---
 
 ## Usage  
