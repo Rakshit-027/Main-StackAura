@@ -45,11 +45,10 @@ const Pricing = () => {
       price: "Based on your plans",
       timeline: "",
       features: [
-        "Basic: $50/mo - Updates & security",
-        "Standard: $150/mo - Content & SEO",
-        "Premium: $400/mo - Features & analytics",
+        "Basic:$50/mo - Updates & security",
+        "Standard:$150/mo - Content & SEO",
+        "Premium:$400/mo - Features & analytics",
         "24/7 support (Premium)",
-        "Monthly reporting",
       ],
     },
   ];
