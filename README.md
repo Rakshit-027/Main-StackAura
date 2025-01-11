@@ -4,7 +4,7 @@ React app using vite web builder
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install packages
+Use the package manager [npm](https://www.npmjs.com/) to install packages
 
 ```bash
 npm install 
